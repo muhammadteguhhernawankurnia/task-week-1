@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //here
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+        // handle the response
+        const getData = () => fetch('https://jsonplaceholder.typicode.com/users')
+        getData()
+        .then(respon => respon.json())
+        .then((result) => {
+            result.map(item => console.log(item['name']))
+            //atau
+            // result.map(item => console.log(item.name))
+        })
+    })
+    .catch(error => {
+        // handle the error
+        console.log(error)
+    });
+    </script>
+</body>
+</html>
